@@ -1,0 +1,132 @@
+<section class="ev-md-container">
+    <div class="row">
+        <div class="col s12">
+            <h3 class="fs-20">آنالیز مسابقات</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m5">
+            <h4 class="fs-18">مسابقه را برای مشاهده تجزیه و تحلیل انتخاب کنید</h4>
+            <div>
+                <span class="main-title">
+                    مجموع مسابقه های میزبانی شده من :
+                </span>
+                <span class="show-count">
+                    {{analytics.challengeListCount}}
+                </span>
+            </div>
+            <ul>
+                <li class="analytics-list analytics-team-input" ng-repeat="(key, value) in analytics.challengeList">
+                    <input type="radio" name="selectExistTeam" class="with-gap selectTeam" id="{{value.id}}"
+                           value="{{value.id}}" ng-model="analytics.challengeId">
+                    <label for="{{value.id}}">
+                        <div class="show-member-title pointer">{{value.title}} <span
+                                class="text-light-black">میزبانی شده توسط گروه </span> {{value.creator.team_name}}
+                        </div>
+                    </label>
+                </li>
+            </ul>
+            <div class="mt-30 btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-dark fs-14 show-analytics-btn"
+                 ng-disabled="analytics.challengeListCount === 0" ng-click="analytics.showChallengeAnalysis()">
+                نمایش تجزیه و تحلیل مسابقه
+                &nbsp;<i class="fa fa-chevron-right"></i></div>
+        </div>
+        <div class="col s12 m7">
+            <h4 class="fs-18">تجزیه و تحلیل مسابقه</h4>
+            <div class="main-title analytics-challenge-title"
+                 ng-if="!analytics.isTeamSelected && analytics.challengeListCount > 0">
+                لطفا مسابقه را برای تجزیه و تحلیل انتخاب کنید.
+            </div>
+            <div class="main-title analytics-challenge-title"
+                 ng-if="analytics.challengeListCount === 0 && analytics.challengeList.length === 0">
+                هیچ مسابقه ای برای تجزیه و تحلیل وجود ندارد
+            </div>
+            <div class="analytics-details" ng-if="analytics.isTeamSelected">
+                <div class="row">
+                    <div class="col s12 m4 l2">
+                        <div class="image-container analytics-image">
+                            <img ng-show="analytics.currentChallengeDetails.image!==null"
+                                 ng-src='{{analytics.currentChallengeDetails.image}}'>
+                        </div>
+                    </div>
+                    <div class="col m8 l10">
+                        <div class="card-content analytics-card-content ">
+                            <h3 class="fs-20 rm-mt"><span>{{analytics.currentChallengeDetails.title}}</span>
+                            </h3>
+                            <span class="text-light-black">میزبانی شده توسط گروه </span>
+                            {{analytics.currentChallengeDetails.creator.team_name}}
+                        </div>
+                    </div>
+                </div>
+                <div class="analytics-challenge-card">
+                    <div class="main-title fs-12">
+                        توضیح کوتاه
+                    </div>
+                    <p class="no-top-para">
+                        {{analytics.currentChallengeDetails.short_description}}
+                    </p>
+                </div>
+                <div class="analytics-challenge-card fs-12 analytics-challenge-single-line">
+                    <span class="main-title">
+                        مجموع گروه های شرکت کننده :
+                    </span>
+                    <span class="show-count">
+                        {{analytics.totalChallengeTeams}}
+                    </span>
+                    <a class="participant-download-btn waves-effect waves-dark btn ev-btn-dark w-300 fs-12"
+                       ng-click="analytics.downloadChallengeParticipantTeams()">دانلود</a>
+                </div>
+                <div class="analytics-challenge-card">
+                    <div class="main-title fs-12">
+                        مراحل مسابقه
+                    </div>
+                    <div class="analytics-phases-card" ng-repeat="item in analytics.currentPhase">
+                        <p class="no-top-para">
+                            {{item.name}}
+                        </p>
+                        <div class="text-light-black fs-12">
+                            مدت زمان برکزاری مرحله مسابقه
+                        </div>
+                        <p class="no-top-para">
+                            {{item.start_date | date:'H:mm' | e2p}}{{item.start_date | date:'y/MM/dd' | jalali | e2p}} -
+                            {{item.end_date | date:'H:mm' | e2p}}{{item.end_date | date:'y/MM/dd' | jalali | e2p}}
+                        </p>
+                        <div class="row center">
+                            <div class="col m3">
+                                <div class="text-light-black fs-12">
+                                    مجموع ارسالی ها
+                                </div>
+                                <p class="no-top-para fs-20">
+                                    {{analytics.totalSubmission[item.id] || 0}}
+                                </p>
+                                <div class="short-hr-line"></div>
+                            </div>
+                            <div class="col m3">
+                                <div class="text-light-black fs-12">
+                                    گروه های شرکت کننده
+                                </div>
+                                <p class="no-top-para fs-20">
+                                    {{analytics.totalParticipatedTeams[item.id] || 0}}
+                                </p>
+                                <div class="short-hr-line"></div>
+                            </div>
+                            <div class="col m3">
+                                <div class="text-light-black fs-12">
+                                    آخرین ارسال در
+                                </div>
+                                <p ng-if="analytics.lastSubmissionTime[item.id]" class="no-top-para mb-5">
+                                    {{analytics.lastSubmissionTime[item.id] | date:'H:mm' | e2p}}
+                                    {{analytics.lastSubmissionTime[item.id] | date:'y/MM/dd' | jalali | e2p}}
+                                </p>
+                                <p ng-if="!analytics.lastSubmissionTime[item.id]" class="no-top-para fs-20">
+                                    -
+                                </p>
+                                <div class="short-hr-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

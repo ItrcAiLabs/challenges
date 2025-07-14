@@ -1,0 +1,28 @@
+<section class="ev-sm-container ev-view ">
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card horizontal ev-md-container ev-card-panel ev-z-depth-5 ">
+                <div class="card-image">
+                    <img src="dist/images/email.png" height="100">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content align-right">
+                        <p>
+                        <strong> دسترسی شما به امکانات سایت محدود است <br> لطفا ایمیل خود را تایید کنید تا دسترسی
+                            کامل به تمام امکانات داشته باشید</strong>
+                            <br>
+                            <strong style="padding:10px 10px;color: #f56700">
+                                لطفا توجه داشته باشید که احتمالا ایمیل در صندوق اسپم شما قرار گرفته است.
+                            </strong></p>
+                        <div ng-if="!perm.sendMail">
+                            <p> <span class="text-light-black">ایمیل دریافت نکردید؟</span> <a class="btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-dark fs-14" ng-click="perm.requestLink()">ارسال مجدد</a></p>
+                        </div>
+                        <div ng-if="perm.sendMail">
+                            <p> <span class="text-light-gray">ایمیل تأیید برای شما ارسال شده است.لطفاایمیل خود را تأیید کنید!</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}لطفاً ایمیل خود را تأیید کنید{% endblocktrans %}
+{% endautoescape %}

@@ -1,0 +1,1036 @@
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) '^api/admin/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>
+[2024-08-14 20:41:22] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/.env'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) '^api/admin/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>
+[2024-08-16 01:43:15] DEBUG base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '^$' [name='home']>], [<URLResolver <module 'allauth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/allauth/urls.py'> (None:None) '^api/allauth/accounts/'>], [<URLResolver <URLPattern list> (admin:admin) '^api/admin/'>], [<URLPattern '^api/auth/login' [name='obtain_expiring_auth_token']>], [<URLResolver <module 'rest_auth.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/urls.py'> (None:None) '^api/auth/'>], [<URLPattern '^api/auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$' [name='account_confirm_email']>], [<URLResolver <module 'rest_auth.registration.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_auth/registration/urls.py'> (None:None) '^api/auth/registration/'>], [<URLPattern '^auth/api/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$' [name='password_reset_confirm']>], [<URLPattern '^api/auth/email-confirmed/$' [name='email_confirm_done']>], [<URLResolver <module 'accounts.urls' from '/home/evalai/apps/accounts/urls.py'> (accounts:accounts) '^api/accounts/'>], [<URLResolver <module 'challenges.urls' from '/home/evalai/apps/challenges/urls.py'> (challenges:challenges) '^api/challenges/'>], [<URLResolver <module 'analytics.urls' from '/home/evalai/apps/analytics/urls.py'> (analytics:analytics) '^api/analytics/'>], [<URLResolver <module 'hosts.urls' from '/home/evalai/apps/hosts/urls.py'> (hosts:hosts) '^api/hosts/'>], [<URLResolver <module 'jobs.urls' from '/home/evalai/apps/jobs/urls.py'> (jobs:jobs) '^api/jobs/'>], [<URLResolver <module 'participants.urls' from '/home/evalai/apps/participants/urls.py'> (participants:participants) '^api/participants/'>], [<URLResolver <module 'web.urls' from '/home/evalai/apps/web/urls.py'> (web:web) '^api/web/'>], [<URLPattern '^api/docs/docs(?P<format>\.json|\.yaml)$' [name='schema-yaml']>], [<URLPattern '^api/docs/$' [name='schema-redoc']>], [<URLResolver <module 'django_spaghetti.urls' from '/home/evalai/venv/lib/python3.7/site-packages/django_spaghetti/urls.py'> (spaghetti:spaghetti) '^dbschema/'>], [<URLResolver <module 'rest_framework.urls' from '/home/evalai/venv/lib/python3.7/site-packages/rest_framework/urls.py'> (rest_framework:rest_framework) '^api/admin-auth/'>], [<URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>], [<URLPattern '^media/(?P<path>.*)$'>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evalai/venv/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'silk.urls' from '/home/evalai/venv/lib/python3.7/site-packages/silk/urls.py'> (silk:silk) '^silk/'>

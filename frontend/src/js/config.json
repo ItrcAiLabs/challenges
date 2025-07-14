@@ -1,0 +1,17 @@
+{
+    "local": {
+        "EnvironmentConfig": {
+            "API": "https://challenges.parsiazma.ir/api/"
+        }
+    },
+    "staging": {
+        "EnvironmentConfig": {
+            "API": "https://challenges.parsiazma.ir/api/"
+        }
+    },
+    "production": {
+        "EnvironmentConfig": {
+            "API": "https://challenges.parsiazma.ir/api/"
+        }
+    }
+}

@@ -1,0 +1,61 @@
+<section class="ev-md-container center">
+    <div ng-if="dash.isPrivileged == false">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card horizontal ev-md-container ev-card-panel" style="height: 200px; padding: 10px;">
+                    <div class="card-image">
+                        <img src="dist/images/email.png" height="80" width="80">
+                    </div>
+                    <div class="card-content align-right">
+                        <p><strong> دسترسی شما به امکانات سایت محدود است <br> لطفا ایمیل خود را تایید کنید تا دسترسی
+                            کامل به تمام امکانات داشته باشید</strong>
+                            <br>
+                            <strong style="padding:10px 10px;color: #f56700">
+                                لطفا توجه داشته باشید که احتمالا ایمیل در صندوق اسپم شما قرار گرفته است.
+                            </strong>
+                            <br>
+                            <strong class="text-light-black">ایمیل دریافت نکردید؟</strong> <a
+                                    class="btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-dark fs-14"
+                                    ng-click="perm.requestLink()">ارسال مجدد</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <!-- <h3 class="fs-20">Your Analysis for Host challenges are ready.</h3> -->
+            <a class="btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-dark fs-14"
+               ui-sref="web.host-analytics">به داشبورد آنالیز برو</a>
+        </div>
+    </div>
+</section>
+<section class="ev-md-container center">
+    <div class="row">
+        <div class="col s12 m6">
+            <h3 class="fs-20 main-title">مسابقات درحال برگزاری </h3>
+            <h4 class="text-dark-black" style="margin-top: 40px">{{dash.challengeCount || 0|e2p}}</h4>
+            <a class="btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-transparent fs-14"
+               ui-sref="web.challenge-main">نمایش همه</a>
+        </div>
+        <div class="col s12 m6">
+            <h3 class="fs-20 main-title">گروه های شرکت کننده من</h3>
+            <h4 class="text-dark-black" style="margin-top: 40px">{{dash.participatedTeamCount || 0|e2p}}</h4>
+            <a class="btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-transparent fs-14" ui-sref="web.teams">نمایش
+                یا ایجاد</a>
+        </div>
+    </div>
+</section>
+
+<!-- simple loader -->
+<div class="loader-container" id="sim-loader">
+    <div class="text-white center w-300 loader-title">بارگذاری</div>
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+

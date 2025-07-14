@@ -1,0 +1,58 @@
+{
+  "name": "evalai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "acorn": "^6.4.2",
+    "autoprefixer": "^10.4.13",
+    "bower": "^1.8.14",
+    "connect-modrewrite": "^0.10.2",
+    "del": "^3.0.0",
+    "eslint-config-angular": "^0.5.0",
+    "eslint-plugin-angular": "^3.3.0",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-inject": "^4.2.0",
+    "gulp-path": "^4.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "lodash": "^4.16.6",
+    "merge-stream": "^1.0.0",
+    "nyc": "^15.1.0",
+    "postcss": "^8.4.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cloud-CV/EvalAI.git"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.7.0",
+    "eslint": "^8.27.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-sass": "^5.1.0",
+    "istanbul": "^0.4.5",
+    "jasmine-core": "^3.4.0",
+    "karma": "^6.4.1",
+    "karma-brief-reporter": "^0.2.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-coverage": "^2.2.0",
+    "karma-coveralls": "^1.2.0",
+    "karma-jasmine": "^2.0.1",
+    "node-sass": "^7.0.3",
+    "puppeteer": "^1.20.0"
+  }
+}

@@ -1,0 +1,47 @@
+<section ng-repeat="item in challenge.phases.results" class="ev-sm-container ev-view challenge-container">
+    <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view phase-card">
+        <div class="row align-right">
+            <div class="col s12 m1 l1">
+                <h5><a ng-if="challenge.isChallengeHost" class="pointer theme-text fs-16"
+                       ng-click="challenge.challengePhaseDialog($event, item)"><i class="fa fa-pencil"
+                                                                                  aria-hidden="true"></i>&nbsp;ویرایش</a>
+                </h5>
+            </div>
+            <div class="col s12 m11">
+                <h5><span class="w-300">{{item.name}}</span>
+                    <span class="new badge orange-background margin-tb-4 f-16" data-badge-caption="مرحله خصوصی"
+                          ng-if="item.showPrivate"></span></h5>
+            </div>
+
+            <div class="col s12 m12 l12">
+                <div class="what-a-separator"></div>
+            </div>
+        </div>
+        <div class="row align-right">
+            <div class="col s12 m12 l12">
+                <p class="fs-16">زمان شروع: <span class="w-300">
+                    {{item.start_date | date:'y/MM/dd' | jalali | e2p}}
+                    - ساعت {{item.start_date |date:'H:mm' | e2p}}
+
+                       </span></p>
+                <p class="fs-16">زمان اتمام : <span
+                        class="w-300">
+                    {{item.end_date | date:'y/MM/dd' | jalali | e2p}}
+                     - ساعت {{item.end_date |date:'H:mm' | e2p}}
+                    </span>
+                </p>
+            </div>
+            <div class="col s12 m12 l12">
+                <div ng-bind-html="item.description" class="fs-16 w-300 phase-description trix-container"></div>
+            </div>
+            <div class="col s12 m12 l12">
+                <p class="fs-16">حداکثر ارسال در روز: <span class="w-300">{{item.max_submissions_per_day}}</span></p>
+                <p class="fs-16">حداکثر ارسال در ماه: <span class="w-300">{{item.max_submissions_per_month}}</span>
+                </p>
+                <p class="fs-16">حداکثر تعداد ارسالی : <span class="w-300">{{item.max_submissions}}</span></p>
+                <p class="fs-16">حداکثر ارسال همزمان: <span
+                        class="w-300">{{item.max_concurrent_submissions_allowed}}</span></p>
+            </div>
+        </div>
+    </div>
+</section>

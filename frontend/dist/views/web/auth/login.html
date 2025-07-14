@@ -1,0 +1,65 @@
+<div class="col s12 m6 offset-m3 left">
+    <ul class="right">
+        <li class="ev-horiz-list"><a ui-sref="auth.login" class="dark-link" ui-sref-active="active-auth"
+                                     ng-click="auth.resetForm()">ورود</a></li>
+        <li class="ev-horiz-list"><a ui-sref="auth.signup" class="light-link" ui-sref-active="active-auth"
+                                     ng-click="auth.resetForm()">عضویت</a></li>
+        <!-- <li class="ev-horiz-list"><a ui-sref="auth.reset-password" class="light-link" ui-sref-active="active-auth" ng-click="auth.resetForm()">Forgot Password</a></li> -->
+    </ul>
+</div>
+<div class="col s12 m6 offset-m3">
+    <!-- login form -->
+    <form name="loginForm" ng-submit="auth.userLogin(loginForm.$valid)" id="log-in" novalidate>
+        <!-- username -->
+        <div class="input-field align-right">
+            <input type="text" id="name" class="dark-autofill" name="name" ng-model="auth.getUser.name" ng-minlength="3"
+                   required>
+            <span class="form-icon form-icon-dark"><i class="fa fa-user"></i></span>
+            <label for="name">نام کاربری*</label>
+            <div class="wrn-msg text-highlight" ng-messages="loginForm.name.$error"
+                 ng-if="loginForm.name.$touched || loginForm.$submitted">
+                <p ng-message="minlength">نام کاربری کوتاه است</p>
+                <p ng-message="required">نام کاربری را وارد کنید</p>
+            </div>
+        </div>
+        <!-- password -->
+        <div class="input-field align-right">
+            <input type="{{canShowPassword ? 'text' : 'password'}}" id="password" class="dark-autofill" name="password"
+                   ng-model="auth.getUser.password" autocomplete="new-password" ng-minlength="8" required>
+            <span class="form-icon form-icon-dark" ng-click="auth.togglePasswordVisibility()">
+                <i ng-if="!canShowPassword" class="fa fa-eye pointer"></i>
+                <i ng-if="canShowPassword" class="fa fa-eye-slash pointer"></i>
+            </span>
+            <label for="password">رمز عبور(حداقل ۸ کارکتر) *</label>
+            <div class="wrn-msg text-highlight" ng-messages="loginForm.password.$error"
+                 ng-if="loginForm.password.$touched || loginForm.$submitted">
+                <p ng-message="minlength">رمز عبور کمتر از 8 کاراکتر است</p>
+                <p ng-message="required">رمز عبور را وارد کنید</p>
+            </div>
+        </div>
+        <div class="row">
+            <!--    <div class="col s6 align-right rm-gut">
+            <input type="checkbox" class="filled-in" ng-model="auth.isRem" id="remeb">
+            <label for="remeb">Remember Me</label>
+        </div> -->
+            <br>
+            <div class="col s6 align-left left rm-gut">
+                <a ui-sref="auth.reset-password" class="light-link fg-pass">رمز عبور یا نام کاربری را فراموش کرده اید</a>
+            </div>
+            <div class="col s6 align-right rm-gut">
+                <button class="waves-effect waves-dark btn ev-btn-dark grad-btn grad-btn-dark w-300" type="submit">
+                    ورود
+                </button>
+            </div>
+
+        </div>
+        <div ng-if="auth.isFormError" class="wrn-msg text-highlight align-right"> {{auth.FormError}}</div>
+        <div>
+            <p class="right text-light-gray">
+                <span class="text-med-black">با یک حساب کاربری جدید شروع کنید</span><a class="highlight-link"
+                                                                                ui-sref="auth.signup"
+                                                                                ng-click="auth.resetForm()"> عضویت</a>
+            </p>
+        </div>
+    </form>
+</div>

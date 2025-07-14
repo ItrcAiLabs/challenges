@@ -1,0 +1,43 @@
+<section class="ev-md-container text-center rm-overflow-y">
+    <div class="row">
+        <div class="col s12 m12">
+            <form name="editChallengeDateForm"
+                ng-submit="challenge.editChallengeDate(editChallengeDateForm.$valid)">
+                <div class="pass-title font-size-16">تاریخ شروع و پایان مسابقه را ویرایش کنید</div>
+                <div class="input-field align-right">
+                    <span class="text-med-black w-400 fs-16">تاریخ و زمان شروع</span>
+                    <input id="start_date" name="start_date" autocomplete="off"
+                        format="MM-DD-YYYY hh:mm a" locale="en"
+                        value="{{ challenge.challengeStartDate }}" ng-model="challenge.challengeStartDate"
+                        start-view="year" ng-model-options="{ updateOn: 'blur' }" placeholder="Start date"
+                        moment-picker="challenge.challengeStartDate"
+                        required>
+                    <span class="form-icon"><i class="fa fa-text"></i></span>
+                </div>
+                <div class="input-field align-right">
+                    <span class="text-med-black w-400 fs-16">تاریخ و زمان اتمام</span>
+                    <input id="end_date" name="end_date" autocomplete="off"
+                        format="MM-DD-YYYY hh:mm a" locale="en"
+                        value="{{ challenge.challengeEndDate }}" ng-model="challenge.challengeEndDate"
+                        start-view="year" ng-model-options="{ updateOn: 'blur' }" placeholder="End date"
+                        moment-picker="challenge.challengeEndDate"
+                        required>
+                    <span class="form-icon"><i class="fa fa-text"></i></span>
+                </div>
+                <div class="align-left text-med-black w-400">
+                    <ul class="inline-list pointer">
+                        <li>
+                            <a ng-click="challenge.editChallengeDate(false)"
+                               class="dark-link pointer"><strong>انصراف</strong></a>
+                        </li>
+                        <li>
+                            <button class="btn ev-btn-dark waves-effect waves-dark grad-btn grad-btn-dark fs-16"
+                                type="submit" value="submit">ذخیره
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,77 @@
+<div class="row" style="background:#fff3cd;border-radius:6px;line-height:24px;width:50%;font-size: 16px;">
+    <p style="padding:10px 10px;color: #664d03">
+        توجه: در حال حاضر امکان ثبت نام از طریق ایمیل های سازمانی وجود ندارد.
+    </p>
+</div>
+<div class="col s12 m6 offset-m3 left">
+    <ul class="right">
+        <li class="ev-horiz-list"><a ui-sref="auth.login" class="light-link" ui-sref-active="active-auth" ng-click="auth.resetForm()">ورود</a></li>
+        <li class="ev-horiz-list"><a ui-sref="auth.signup" class="dark-link" ui-sref-active="active-auth" ng-click="auth.resetForm()">عضویت</a></li>
+        <!-- <li class="ev-horiz-list"><a ui-sref="auth.reset-password" class="light-link" ui-sref-active="active-auth" ng-click="auth.resetForm()">Forgot Password</a></li> -->
+    </ul>
+</div>
+<div class="col s12 m6 offset-m3">
+    <!-- login form -->
+    <form name="signupForm" ng-submit="auth.userSignUp(signupForm.$valid)" id="sign-up" novalidate>
+        <!-- username -->
+        <div class="input-field align-right">
+            <input type="text" id="name" class="dark-autofill" name="name" ng-model="auth.regUser.name" ng-minlength="3" required>
+            <span class="form-icon form-icon-dark"><i class="fa fa-user"></i></span>
+            <label for="name">نام کاربری*</label>
+            <div class="wrn-msg text-highlight" ng-messages="signupForm.name.$error" ng-if="signupForm.name.$touched || signupForm.$submitted">
+                <p ng-message="minlength">نام کاربری خیلی کوتاه است.</p>
+                <p ng-message="required">نام کاربری اجباری است.</p>
+            </div>
+        </div>
+        <!-- email -->
+        <div class="input-field align-right">
+            <input type="email" id="email" class="dark-autofill" name="email" ng-model="auth.regUser.email" required>
+            <span class="form-icon form-icon-dark"><i class="fa fa-envelope"></i></span>
+            <label for="email">ایمیل</label>
+            <div class="wrn-msg text-highlight" ng-messages="signupForm.email.$error" ng-if="signupForm.email.$touched || signupForm.$submitted">
+                <p ng-message="email">لطفا ایمیل معتبر وارد کنید.</p>
+                <p ng-message="required"> ایمیل لازم است.</p>
+            </div>
+        </div>
+        <!-- password -->
+        <div class="input-field align-right">
+            <input type="{{canShowPassword ? 'text' : 'password'}}" id="password" class="dark-autofill" name="password" ng-model="auth.regUser.password" ng-minlength="8" ng-change="auth.checkStrength(auth.regUser.password)" required>
+            <span class="form-icon form-icon-dark" ng-click="auth.togglePasswordVisibility()">
+                <i ng-if="!canShowPassword" class="fa fa-eye pointer"></i>
+                <i ng-if="canShowPassword" class="fa fa-eye-slash pointer"></i>
+            </span>
+            <label for="password">
+                <strong> رمز عبور(حداقل ۸ کارکتر) *</strong>
+                <span ng-style="{color: auth.color}" ng-if="auth.showPasswordStrength">{{auth.message}}</span>
+            </label>
+            <div class="wrn-msg text-highlight" ng-messages="signupForm.password.$error" ng-if="signupForm.password.$touched || signupForm.$submitted">
+                <p ng-message="minlength">رمز عبور کمتر از 8 کارکتر است.</p>
+                <p ng-message="required">رمز عبور اجباری است.</p>
+            </div>
+        </div>
+        <!-- confirm password -->
+        <div class="input-field align-right">
+            <input type="{{canShowConfirmPassword ? 'text' : 'password'}}" id="confirm_password" class="dark-autofill" name="confirm_password" ng-model="auth.regUser.confirm_password" ng-minlength="8" compare-to="auth.regUser.password" required>
+            <span class="form-icon form-icon-dark" ng-click="auth.toggleConfirmPasswordVisibility()">
+                <i ng-if="!canShowConfirmPassword" class="fa fa-eye pointer"></i>
+                <i ng-if="canShowConfirmPassword" class="fa fa-eye-slash pointer"></i>
+            </span>
+            <label for="confirm_password">تأیید رمز عبور*</label>
+            <div class="wrn-msg text-highlight" ng-messages="signupForm.confirm_password.$error" ng-if="signupForm.confirm_password.$touched || signupForm.$submitted">
+                <p ng-message="compareTo">رمز عبور ها مطابقت ندارند</p>
+                <p ng-message="minlength">رمز عبور کمتر از 8 کارکتر است.</p>
+                <p ng-message="required">تأیید رمز عبور اجباری است.</p>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="align-right reg-control">
+            <button class="waves-effect waves-dark btn ev-btn-dark grad-btn grad-btn-dark w-300" type="submit" value="Submit">عضویت</button>
+        </div>
+        <div ng-if="auth.isFormError" class="text-highlight align-right"> {{auth.FormError}}</div>
+        <div>
+            <p class="right text-light-gray">
+                <span class="text-med-black"> حساب کاربری دارید؟</span> <a class="highlight-link" ui-sref="auth.login">ورود</a>
+            </p>
+        </div>
+    </form>
+</div>

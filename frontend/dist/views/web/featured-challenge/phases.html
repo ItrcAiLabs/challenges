@@ -1,0 +1,32 @@
+<section ng-repeat="item in featured_challenge.phases.results" class="ev-sm-container ev-view challenge-container">
+    <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view phase-card">
+        <div class="row">
+            <div class="col s12">
+                <span class="fs-18 text-med-black"><strong>{{item.name}}</strong></span>
+            </div>
+            <div class="col s12">
+                <p><strong class="text-light-black fs-12">زمان شروع</strong>
+                    <br> <strong>{{item.start_date | date:'H:mm' | e2p}}
+                        {{item.start_date | date:'y/MM/dd' | jalali | e2p}}</strong></p>
+                <p><strong class="text-light-black fs-12">زمان اتمام</strong>
+                    <br> <strong>{{item.end_date | date:'H:mm' | e2p}}
+                        {{item.end_date | date:'y/MM/dd' | jalali | e2p}}</strong></p>
+                <div ng-bind-html="item.description"></div>
+                <p><strong class="text-light-black fs-12">حداکثر ارسال در روز</strong>
+                    <br> <strong>{{item.max_submissions_per_day}}</strong></p>
+                <p><strong class="text-light-black fs-12">حداکثر تعداد ارسالی</strong>
+                    <br> <strong>{{item.max_submissions}}</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ev-sm-container ev-view challenge-container ">
+    <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view phase-card ev-dark-card ">
+        <div class="row">
+            <div class="col s12">
+                <p><strong> پایان مسابقه: </strong>{{featured_challenge.page.end_date |date:'H:mm' | e2p}}
+                    {{featured_challenge.page.end_date | date:'y/MM/dd' | jalali | e2p}}</p>
+            </div>
+        </div>
+    </div>
+</section>

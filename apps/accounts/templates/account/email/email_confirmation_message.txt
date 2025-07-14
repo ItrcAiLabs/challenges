@@ -1,0 +1,8 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+با سلام،
+این ایمیل برای اطلاع رسانی به شما در مورد ثبت نام کاربر "{{ user_display }}" در وبسایت {{ site_name }} ارسال شده است. به منظور تأیید ثبت نام خود، لطفاً بر روی لینک زیر کلیک کنید:
+{{ activate_url }}
+{% endblocktrans %}{% endautoescape %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}با تشکر از استفاده شما از وبسایت {{ site_name }}
+{% endblocktrans %}

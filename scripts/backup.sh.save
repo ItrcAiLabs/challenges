@@ -1,0 +1,10 @@
+#!/bin/sh
+
+output='/home/'
+
+$output.postgres-backup.sql
+label=$(date +%F_%T)
+database_path=$outputpostgres-backup$label.sql
+echo $database_path
+/usr/bin/docker exec -i timescaledb pg_dump -U evalai evalai > $database_pat
+echo $label

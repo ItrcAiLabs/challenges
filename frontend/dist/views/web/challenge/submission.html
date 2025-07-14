@@ -1,0 +1,353 @@
+<section ng-if="challenge.isActive" class="ev-sm-container ev-view challenge-container">
+    <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view margin-btm-0">
+        <div class="row margin-bottom-cancel">
+            <div ng-if="challenge.isChallengeHost" class="col s1 m1">
+                <a class="pointer" ng-click="challenge.submissionGuidelinesDialog($event)">
+                    <i class="fa fa-pencil" aria-hidden="true">
+                    </i>&nbsp;ویرایش
+                </a>
+            </div>
+            <div class="col s12 m11 l11">
+                <h5 class="w-300">راهنمای ارسال</h5>
+            </div>
+
+            <div class="col s12 m12 l12">
+                <div class="what-a-separator"></div>
+            </div>
+
+            <div class="col s12" ng-if="challenge.isChallengeHost">
+                <p class="fs-16"><strong>توجه: </strong> از آنجایی که شما میزبان این مسابقه هستید، موارد ارسالی
+                    شما در تابلوی امتیازات
+                    قابل مشاهده نخواهد بود<br>این ویژگی فقط برای تست شما است</p>
+                </strong>
+            </div>
+            <div class="col s12">
+                <div ng-bind-html="challenge.page.submission_guidelines"
+                     class="fs-16 w-300 submission-guidelines trix-container"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- If challenge is not docker based -->
+<section class="ev-sm-container ev-view challenge-container phase-container" ng-if="!challenge.page.is_docker_based">
+    <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view">
+        <div class="row margin-bottom-cancel">
+            <div class="col s12">
+                <h5 class="w-300">ارسال</h5>
+            </div>
+
+            <div class="col s12 m7 fs-16 w-300 fr">
+                <div class="ev-card-body exist-team-card">
+                    <form ng-submit="challenge.makeSubmission();">
+                        <p class="fs-18 w-400">انتخاب مرحله:</p>
+                        <ul>
+                            <li ng-repeat="item in challenge.phases.results">
+                                <input
+                                        ng-disabled="challenge.currentDate < item.start_date || challenge.currentDate >= item.end_date"
+                                        type="radio" name="selectPhase" class="with-gap selectPhase" id="{{item.id}}"
+                                        value="{{item.id}}" ng-model="challenge.phaseId"
+                                        ng-click="challenge.showRemainingSubmissions(item.id); challenge.loadPhaseAttributes(item.id); challenge.clearMetaAttributeValues();">
+                                <label for="{{item.id}}"></label>
+                                <div class="show-member-title pointer" ng-if="!item.showPrivate"><strong
+                                        class="text-med-black">مرحله: </strong>{{item.name}}
+                                    <br>
+                                    <strong class="text-med-black">تاریخ شروع:
+                                    </strong>{{item.start_date | date:'H:mm' | e2p}}
+                                    {{item.start_date | date:'y/MM/dd' | jalali | e2p}}
+                                    <br>
+                                    <strong class="text-med-black">تاریخ اتمام:
+                                    </strong>{{item.end_date | date:'H:mm' | e2p}}
+                                    {{item.end_date | date:'y/MM/dd' | jalali | e2p}}
+                                </div>
+                                <div class="show-member-title pointer" ng-if="item.showPrivate"><strong
+                                        class="text-highlight">Phase: </strong> <span class="text-highlight">
+                                        {{item.name}}</span>
+                                    <br>
+                                    <strong class="text-highlight">زمان شروع: </strong><span
+                                            class="text-highlight">{{item.start_date | date:'H:mm' | e2p}}
+                                        {{item.start_date | date:'y/MM/dd' | jalali | e2p}}
+                                       </span>
+                                    <br>
+                                    <strong class="text-highlight">زمان اتمام: </strong><span
+                                            class="text-highlight">{{item.end_date | date:'H:mm' | e2p}}
+                                        {{item.end_date | date:'y/MM/dd' | jalali | e2p}}
+                                       </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                            <p class="fs-18 w-400">انتخاب نوع ارسال:
+                            </p>
+                            <li>
+                                <input type="radio" name="submissionOptions" class="with-gap selectPhase"
+                                       id="fileUpload" value="challenge.showFileUploadOption"
+                                       ng-click="challenge.isSubmissionUsingFile = true; challenge.isSubmissionUsingUrl = false; challenge.isSubmissionUsingCli = false;">
+                                <label for="fileUpload"></label>
+                                <div class="show-member-title pointer">
+                                    <strong class="fs-16 w-300">بارگذاری فایل </strong>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                            <div ng-show="challenge.isSubmissionUsingFile && challenge.isSubmissionUsingCli == false && challenge.isSubmissionUsingUrl == false"
+                                 class="row">
+                                <div class="file-field input-field col s10">
+                                    <div class="waves-effect waves-dark btn ev-btn-dark w-300 fs-14">
+                                        <span>بارگذاری فایل </span>
+                                        <input type="file" ngf-select ng-model="challenge.input_file"
+                                               name="challenge.input_file"
+                                               accept="{{challenge.currentPhaseAllowedSubmissionFileTypes}}">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="challenge.isSubmissionUsingUrl && challenge.isSubmissionUsingCli == false && challenge.isSubmissionUsingFile == false"
+                                 class="row">
+                                <div class="input-field align-right col s10">
+                                    <input type="text" id="fileUrl" name="fileUrl" ng-model="challenge.fileUrl">
+                                    <span class="form-icon"><i class="fa fa-text"></i></span>
+                                    <label for="fileUrl">آدرس فایل ارسالی</label>
+                                </div>
+                            </div>
+
+                            <!-- Submission using file upload or URL -->
+                            <div
+                                    ng-show="challenge.isSubmissionUsingUrl || challenge.isSubmissionUsingFile">
+
+                                <div ng-show="challenge.currentPhaseLeaderboardPublic">
+                                    <p class="fs-14 w-400" ng>قابلیت مشاهده ارسال را انتخاب کنید:</p>
+                                    <li>
+                                        <input type="radio" name="submissionVisibility" class="with-gap selectPhase"
+                                               id="isPublicSubmission"
+                                               value="isPublicSubmission"
+                                               ng-click="challenge.isPublicSubmission = true">
+                                        <label for="isPublicSubmission"></label>
+                                        <div class="show-member-title pointer">
+                                            <strong class="fs-16 w-300">عمومی
+                                            </strong>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                        <input type="radio" name="submissionVisibility" class="with-gap selectPhase"
+                                               id="isPrivateSubmission" value="isPrivateSubmission"
+                                               ng-click="challenge.isPublicSubmission = false">
+                                        <label for="isPrivateSubmission"></label>
+                                        <div class="show-member-title pointer">
+                                            <strong class="fs-16 w-300">خصوصی </strong>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </div>
+                                <div class="row"
+                                     ng-if="challenge.currentPhaseMetaAttributesVisibility['method_name'] == true">
+                                    <div class="input-field align-right col s10">
+                                        <input type="text" id="methodName" name="methodName"
+                                               ng-model="challenge.methodName">
+                                        <span class="form-icon"><i class="fa fa-text"></i></span>
+                                        <label for="methodName">اسم روش(اختیاری)</label>
+                                    </div>
+                                </div>
+                                <div class="row"
+                                     ng-if="challenge.currentPhaseMetaAttributesVisibility['method_description'] == true">
+                                    <div class="input-field align-right col s10">
+                                        <textarea id="methodDesc" class="materialize-textarea" name="methodDesc"
+                                                  ng-model="challenge.methodDesc"></textarea>
+                                        <span class="form-icon"><i class="fa fa-text"></i></span>
+                                        <label for="methodDesc">توصیف روش (اختیاری)</label>
+                                    </div>
+                                </div>
+                                <div class="row"
+                                     ng-if="challenge.currentPhaseMetaAttributesVisibility['project_url'] == true">
+                                    <div class="input-field align-right col s10">
+                                        <input type="text" id="projectUrl" name="projectUrl"
+                                               ng-model="challenge.projectUrl">
+                                        <span class="form-icon"><i class="fa fa-text"></i></span>
+                                        <label for="projectUrl">آدرس پروژه (اختیاری)</label>
+                                    </div>
+                                </div>
+                                <div class="row"
+                                     ng-if="challenge.currentPhaseMetaAttributesVisibility['publication_url'] == true">
+                                    <div class="input-field align-right col s10">
+                                        <input type="text" id="publicationUrl" name="publicationUrl"
+                                               ng-model="challenge.publicationUrl">
+                                        <span class="form-icon"><i class="fa fa-text"></i></span>
+                                        <label for="publicationUrl">آدرس مقاله(اختیاری)</label>
+                                    </div>
+                                </div>
+                                <div class="dynamicform">
+                                    <div ng-if="challenge.metaAttributesforCurrentSubmission != null"
+                                         ng-repeat="attribute in challenge.metaAttributesforCurrentSubmission">
+                                        <div ng-if="attribute.type == 'text'">
+                                            <div class="row">
+                                                <div class="input-field align-right col s10">
+                                                    <input type="text" ng-model="attribute.value"
+                                                           name="{{attribute.name}}" id="{{attribute.name}}"
+                                                           ng-required="attribute.required === true">
+                                                    <span class="form-icon"><i class="fa fa-text"></i></span>
+                                                    <label for="{{attribute.name}}" class
+                                                           ng-bind-html="attribute.name + ' (' + attribute.description + ')'"
+                                                           for="{{attribute.name}}"></label><span
+                                                        ng-if="attribute.required === true"
+                                                        class="color-orange">*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-if="attribute.type == 'radio'">
+                                            <div class="row">
+                                                <div class="align-left col s10">
+                                                    <label for="{{attribute.name}}" class="label-radio"
+                                                           ng-bind-html="attribute.name + ' (' + attribute.description + ')'"
+                                                           for="{{attribute.name}}"></label><span
+                                                        ng-if="attribute.required === true"
+                                                        class="color-orange">*</span>
+                                                    <div class="input-field">
+                                                        <md-radio-group ng-model="attribute.value"
+                                                                        id="{{attribute.name}}"
+                                                                        name="{{attribute.name}}">
+                                                            <md-radio-button ng-repeat="option in attribute.options"
+                                                                             ng-value="option"
+                                                                             ng-model="attribute.value">
+                                                                <span class="fs-16">{{option}}</span>
+                                                            </md-radio-button>
+                                                        </md-radio-group>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-if="attribute.type == 'checkbox'">
+                                            <div class="row">
+                                                <div class="align-left col s10">
+                                                    <label for="{{attribute.name}}" class="label-checkbox"
+                                                           ng-bind-html="attribute.name + ' (' + attribute.description + ')'"
+                                                           for="{{attribute.name}}"></label><span
+                                                        ng-if="attribute.required === true"
+                                                        class="color-orange">*</span>
+                                                    <div class="input-field">
+                                                        <div class="submission-options"
+                                                             ng-repeat="option in attribute.options"
+                                                             id="{{attribute.name}}" name="{{attribute.name}}">
+                                                            <input type="checkbox"
+                                                                   ng-click="challenge.toggleSelection(attribute, option);"
+                                                                   id="{{option}}" ng-value="option">
+                                                            <label for="{{option}}"></label>
+                                                            <span class="fs-16 w-300">{{option}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-if="attribute.type == 'boolean'">
+                                            <div class="row">
+                                                <div class="align-left col s10">
+                                                    <label for="{{attribute.name}}" class="label-radio"
+                                                           ng-bind-html="attribute.name + ' (' + attribute.description + ')'"
+                                                           for="{{attribute.name}}"></label><span
+                                                        ng-if="attribute.required === true"
+                                                        class="color-orange">*</span>
+                                                    <div class="input-field">
+                                                        <md-radio-group ng-model="attribute.value"
+                                                                        id="{{attribute.name}}"
+                                                                        name="{{attribute.name}}">
+                                                            <md-radio-button ng-value="'True'">True</md-radio-button>
+                                                            <md-radio-button ng-value="'False'">False</md-radio-button>
+                                                        </md-radio-group>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-highlight red-text"><strong>{{challenge.subErrors.msg}}</strong></div>
+                                <section class="pagination">
+                                    <div class="row rm-gut">
+                                        <div class="col s12 m12">
+                                            <div class="align-left">
+                                                <button class="waves-effect waves-dark btn ev-btn-dark w-300 fs-16"
+                                                        ng-disabled="challenge.disableSubmit || (!challenge.input_file && !challenge.fileUrl)"
+                                                        type="submit" value="Submit">ارسال
+                                                </button>
+                                                <br>
+                                                <br>
+                                                <span class="text-dark-black"><strong>{{challenge.submissionError}}</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+            <div ng-if="challenge.maxExceeded" class="col s12 m5">
+                <div class="ev-card-body exist-team-card ev-remaining-submission remaining-submission-clock">
+                    <div class="row">
+                        <span class="color-black">
+                            <strong>
+                                {{challenge.maxExceededMessage}}
+                            </strong>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="challenge.showSubmissionNumbers" class="col s12 m5">
+                <div class="ev-card-body exist-team-card ev-remaining-submission remaining-submission-clock">
+                    <div class="row">
+                        <span class="color-black">
+                            <strong>
+                                ارسالی های باقی مانده امروز:
+                            </strong>
+                            <span class="fs-16 w-300">
+                                {{challenge.remainingSubmissions.remaining_submissions_today_count |e2p}}
+                            </span>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <span class="color-black">
+                                <strong>
+                                    ارسال های باقی مانده ماهانه:
+                                </strong>
+                                <span class="fs-16 w-300">
+                                    {{challenge.remainingSubmissions.remaining_submissions_this_month_count |e2p}}
+                                </span>
+                        </div>
+                        <span class="color-black">
+                            <strong>
+                                مجموع ارسالی های باقی مانده:
+                            </strong>
+                        </span>
+                        <span class="fs-16 w-300">
+                            {{challenge.remainingSubmissions.remaining_submissions_count |e2p}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="challenge.showClock" class="col s12 m5 fs-16 w-300">
+                <div class="ev-card-body exist-team-card ev-remaining-submission remaining-submission-clock">
+                    <div class="row">
+                        <strong class="text-med-black">
+                            Message:
+                        </strong> {{challenge.message.message}}
+                    </div>
+                    <div>
+                        ارسال بعدی پس از:
+                    </div>
+                    <div>
+                        <span ng-if="challenge.days!=0">{{challenge.days}} روز, </span>{{challenge.hours}}
+                        ساعت : {{challenge.minutes}} دقیقه : {{challenge.remainingSeconds}} ثانیه
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Show error when the challenge is not active -->
+<section ng-if="!challenge.isActive" class="ev-sm-container ev-view challenge-container">
+    <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view">
+        <p class="fs-16 w-300">با عرض پوزش، مسابقه فعال نیست.</p>
+    </div>
+</section>
